@@ -4,6 +4,7 @@ from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware  # 新增跨域配置（可选但推荐）
 from question import get_qa_answer_stream  # 确保qa_engine.py和controller.py在同一目录
 import logging
+import uvicorn
 import os
 
 # 配置日志
@@ -44,7 +45,7 @@ async def qa_interface(
 
 # 启动服务（关键修改：模块名改为controller，适配文件名）
 if __name__ == "__main__":
-    import uvicorn
+
     # 修复：将"qa_controller:app"改为"controller:app"（对应文件名controller.py）
     # 新增：关闭reload模式（避免重复初始化数据库），开发时如需reload需额外处理
     uvicorn.run(
