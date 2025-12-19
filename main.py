@@ -22,6 +22,8 @@ BATCH_CONFIG = {
     "retry_delay": 2
 }
 
+
+
 BUSINESS_CONFIG = {
     "drink_label": "中药材",                  # 代茶饮节点的标签名称
     "herb_label": "代茶饮",                   # 中药材节点的标签名称（可改如"药材"）
